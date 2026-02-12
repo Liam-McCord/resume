@@ -464,3 +464,10 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     box-shadow: 0 0 8px #ce53ff;
 }
+
+.contact-links a img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+
+}
