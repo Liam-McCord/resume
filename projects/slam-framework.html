@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PROJECT_TITLE | Liam McCord</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/quaternion-cut.png">
+
+    <style>
+        body {
+            padding-top: 80px; /* account for navbar */
+        }
+        .project-page {
+            max-width: 1000px;
+            margin: auto;
+            padding: 3rem 2rem;
+        }
+        .project-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .project-header h1 {
+            font-size: 2.5rem;
+            color: #7f5af0;
+            margin-bottom: 0.5rem;
+        }
+        .project-header p {
+            font-size: 1.2rem;
+            color: #cccccc;
+        }
+        .project-images {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .project-images img {
+            width: 100%;
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+        .project-description {
+            font-size: 1.1rem;
+            color: #d0d0d0;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        .project-tech {
+            font-size: 1rem;
+            color: #7f5af0;
+            margin-bottom: 3rem;
+        }
+        .back-link {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #7f5af0;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .back-link:hover {
+            background: #9d79ff;
+        }
+
+        @media (min-width: 900px) {
+            .project-images {
+                flex-direction: row;
+            }
+            .project-images img {
+                width: 48%;
+            }
+        }
+
+        /* Dropdown styles (matches index) */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a1a1a;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+            border-radius: 12px;
+            z-index: 1000;
+            top: 100%;
+        }
+        .dropdown-content a {
+            color: #f5f5f5;
+            padding: 0.8rem 1rem;
+            text-decoration: none;
+            display: block;
+            transition: 0.3s;
+        }
+        .dropdown-content a:hover {
+            background: #7f5af0;
+            color: #fff;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">Liam McCord</div>
+    <ul class="nav-links">
+        <li><a href="../#about">About</a></li>
+        <li><a href="../#internships">Internships</a></li>
+        <li class="dropdown">
+            <a href="../#personal-projects">Projects ▾</a>
+            <div class="dropdown-content">
+                <a href="orbital-optimiser.html">Orbital Simulation Tool</a>
+                <a href="slam-framework.html">SLAM Framework</a>
+                <a href="quaternion-control.html">Quaternion Attitude Control</a>
+                <a href="bluestone-flight-computer.html">Bluestone Flight Computer</a>
+                <a href="pick-and-place.html">Pick & Place Machine</a>
+                <a href="rocket-simulation.html">Atmospheric Rocket Simulation</a>
+                <a href="gesture-recognition.html">Gesture Recognition</a>
+            </div>
+        </li>
+        <li><a href="../#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="project-page">
+    <div class="project-header">
+        <h1>PROJECT_TITLE</h1>
+        <p>SHORT_PROJECT_SUMMARY</p>
+    </div>
+
+    <div class="project-images">
+        <img src="../assets/IMAGE1.png" alt="Screenshot 1">
+        <img src="../assets/IMAGE2.png" alt="Screenshot 2">
+    </div>
+
+    <div class="project-description">
+        <p>
+            DETAILED_PROJECT_DESCRIPTION_PARAGRAPH1
+        </p>
+        <p>
+            DETAILED_PROJECT_DESCRIPTION_PARAGRAPH2
+        </p>
+    </div>
+
+    <div class="project-tech">
+        <strong>Technologies:</strong> TECH_STACK
+    </div>
+
+    <a href="../#personal-projects" class="back-link">← Back to Projects</a>
+</section>
+
+</body>
+</html>
