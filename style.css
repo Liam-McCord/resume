@@ -421,3 +421,43 @@ body {
 .email-link:hover {
     color: #fff;
 }
+/* Scrollbar width */
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+/* Scrollbar track */
+::-webkit-scrollbar-track {
+    background: #0f0f0f;
+}
+
+/* 1. Scrollbar Width */
+::-webkit-scrollbar {
+  width: 15px; /* Adjust as needed */
+}
+
+
+::-webkit-scrollbar-track {
+  background: #0a0a2a; 
+  border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #5900ff, #250050, #f700ff); 
+  border-radius: 10px;
+  border: 2px solid #000000; 
+  min-height: 50px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #3700ff, #1f0050, #ff0095);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #333;
+}
+::-webkit-scrollbar-thumb:hover {
+    box-shadow: 0 0 8px #ce53ff;
+}
