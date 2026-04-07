@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>PROJECT_TITLE | Liam McCord</title>
+    <title>Slam Framework | Liam McCord</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/quaternion-cut.png">
+    <link rel="icon" type="image/png" href="../assets/slamcropped.png">
 
     <style>
         body {
@@ -131,26 +131,49 @@
 
 <section class="project-page">
     <div class="project-header">
-        <h1>PROJECT_TITLE</h1>
-        <p>SHORT_PROJECT_SUMMARY</p>
+        <h1>Slam Framework</h1>
+        <p>Working on SLAM aspects from scratch.</p>
     </div>
 
     <div class="project-images">
-        <img src="../assets/IMAGE1.png" alt="Screenshot 1">
-        <img src="../assets/IMAGE2.png" alt="Screenshot 2">
+        <img src="../assets/slamcropped.png" alt="Screenshot 1">
+        <img src="../assets/lidarrotationvideo.gif" alt="Screenshot 2">
     </div>
 
     <div class="project-description">
+
         <p>
-            DETAILED_PROJECT_DESCRIPTION_PARAGRAPH1
+            The goal of this project was to create a 2D simulation environment and demonstrate autonomous navigation within an unfamiliar environment.
         </p>
+
         <p>
-            DETAILED_PROJECT_DESCRIPTION_PARAGRAPH2
+            I created a Python tool to convert any 2D black-and-white image into a maze environment, and simulated 10 LiDAR sensors with 36 degrees of separation around the robot. I simulated the path of each beam and assembled a "known" map using LiDAR impacts, applying Gaussian distributions to represent the certainty that a wall existed within each square of the occupancy grid.
         </p>
+
+        <p>
+            To navigate the maze, I developed a method based on physics simulation concepts, treating unexplored areas as attractors and walls as repulsors, while also modelling the robot’s previous path as a weaker repulsor. This encouraged exploration of new areas, and when the robot became trapped, the accumulated force from the previous path enabled it to escape.
+        </p>
+
+        <p>
+            This approach worked reliably across a wide range of maze environments, especially after tuning the relative strength and order of the attractive and repulsive forces.
+        </p>
+
+        <p>
+            As a secondary part of the project, I aimed to estimate attitude changes using real LiDAR data.
+        </p>
+
+        <p>
+            I converted the data into a point cloud and applied the Iterative Closest Point (ICP) method to estimate the rotation matrix between initial and final 2D scans. To avoid convergence locality, I implemented grid sampling over rotation matrices to identify the angle with the highest convergence (i.e. the angle to which the most points aligned).
+        </p>
+
+        <p>
+            This method achieved accuracy within two degrees in testing, with improved performance when more environmental features were present. It successfully estimated rotations of approximately ±90 degrees using only LiDAR point cloud data, without relying on gyroscopes or accelerometers.
+        </p>
+
     </div>
 
     <div class="project-tech">
-        <strong>Technologies:</strong> TECH_STACK
+        <strong>Technologies:</strong> Python, SLAM, LiDAR Simulation, ICP, Occupancy Grids
     </div>
 
     <a href="../#personal-projects" class="back-link">← Back to Projects</a>

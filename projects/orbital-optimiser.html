@@ -76,7 +76,6 @@
             }
         }
 
-        /* Dropdown styles (matches index) */
         .dropdown {
             position: relative;
         }
@@ -132,7 +131,7 @@
 <section class="project-page">
     <div class="project-header">
         <h1>Orbital Optimiser</h1>
-        <p>SHORT_PROJECT_SUMMARY</p>
+        <p>Modelling of spacecraft orbits and exploration of Monte Carlo optimisation techniques.</p>
     </div>
 
     <div class="project-images">
@@ -141,16 +140,31 @@
     </div>
 
     <div class="project-description">
+
         <p>
-            DETAILED_PROJECT_DESCRIPTION_PARAGRAPH1
+            This project was developed to explore orbital modelling and optimisation techniques, and has been incrementally improved as I refined my approach.
         </p>
+
         <p>
-            DETAILED_PROJECT_DESCRIPTION_PARAGRAPH2
+            I modelled orbital motion using higher-order numerical integration (RK4) to ensure accuracy. Starting and target conditions were defined using orbital parameters and converted into the simulation frame using rotation matrices.
         </p>
+
+        <p>
+            Building on this foundation, I implemented a naive Monte Carlo optimisation method to evaluate control inputs. Candidate inputs were sampled and tested to determine which produced a trajectory closest to the desired orbital position at a target time.
+        </p>
+
+        <p>
+            This approach demonstrated the feasibility of optimisation within the simulation, while also highlighting limitations in efficiency and convergence.
+        </p>
+
+        <p>
+            Planned improvements include modelling J2 orbital perturbations and implementing more advanced optimisation methods to improve performance and accuracy.
+        </p>
+
     </div>
 
     <div class="project-tech">
-        <strong>Technologies:</strong> TECH_STACK
+        <strong>Technologies:</strong> Python, Coordinate Transforms, Monte Carlo Optimisation
     </div>
 
     <a href="../#personal-projects" class="back-link">← Back to Projects</a>
