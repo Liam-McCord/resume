@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Slam Framework | Liam McCord</title>
+    <title>Other Projects | Liam McCord</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/slamcropped.png">
+    <link rel="icon" type="image/png" href="../assets/quaternion-cut.png">
 
     <style>
         body {
@@ -76,7 +76,6 @@
             }
         }
 
-        /* Dropdown styles (matches index) */
         .dropdown {
             position: relative;
         }
@@ -129,7 +128,6 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 <body>
 
-<!-- Navbar with Projects Dropdown -->
 <nav class="navbar">
     <div class="logo">Liam McCord</div>
 
@@ -156,54 +154,59 @@ document.addEventListener("DOMContentLoaded", () => {
         <li><a href="../#contact">Contact</a></li>
     </ul>
 </nav>
-
-
-
 <section class="project-page">
     <div class="project-header">
-        <h1>Slam Framework</h1>
-        <p>Working on SLAM aspects from scratch.</p>
+        <h1>Other Projects</h1>
+        <p>Other projects that I have worked on during my time in engineering.</p>
     </div>
 
     <div class="project-images">
-        <img src="../assets/slamcropped.png" alt="Screenshot 1">
-        <img src="../assets/lidarrotationvideo.gif" alt="Screenshot 2">
+        <img src="../assets/level-one-rocket.png" alt="Screenshot 1">
+        <img src="../assets/Robocuprobot.jpg" alt="Screenshot 2">
     </div>
 
     <div class="project-description">
 
         <p>
-            The goal of this project was to create a 2D simulation environment and demonstrate autonomous navigation within an unfamiliar environment.
+            In addition to the projects detailed above, I have worked on a variety of other projects that have allowed me to explore different technologies and problem domains. These projects include:
         </p>
+        <br>
+        <p>
+            - For my final year project, I am currently developing a 6DOF model and accompanying control architecture for a fixed-wing Electric Ducted Fan powered aircraft in Simulink/Matlab.
+            I am currently designing a control framework in Simulink to interface with Ardupilot, and will be exploring parameter estimation and adaptive control for the use case.
+        </p>
+         <br>
+        <p>
+            - Development of a competition robot in teams of three for the "RoboCup" competition. The robot had to autonomously collect more weights than opposing robots, while also discarding "dummy" plastic weights.
+            I worked primarily on the CAD for the weight collection system and the development of software and navigation drivers. Many components that we were given were notably unreliable and as such the robot needed to be robust to component failure.
+    
+        </p>
+         <br>
+        <p>
+            - Creation of a custom machine assistant with vector-embedding based local memory and recall, facial recognition, wake word detection, TTS/STT integration, task scheduling with a low-power sleep mode, emotion recognition, 
+            and spotify integration on a Raspberry Pi. Vector "keys" for previous interactions with users are stored in their area of the vector space so that the program is able to recall facts without having to comb through a database.
+        </p>
+        <br>
+        <p>
+            - Development of an elevator control algorithm on a Programmable Logic Controller. Smooth movement, request scheduling, and extensive gain tuning was implemented to meet criteria.
+        </p>
+        <br>
+        <p>
+            - Ongoing development of a "smart watch" embedded system, currently in the stage of PCB design. I currently plan to use a heartrate monitor, IMU, barometer, and temperature sensor to collect environmental data.
+        </p>
+        <br>
 
         <p>
-            I created a Python tool to convert any 2D black-and-white image into a maze environment, and simulated 10 LiDAR sensors with 36 degrees of separation around the robot. I simulated the path of each beam and assembled a "known" map using LiDAR impacts, applying Gaussian distributions to represent the certainty that a wall existed within each square of the occupancy grid.
+            - Reporting, openrocket modelling, assembly, painting, and launch of a Level 1 rocket. The launch was succesful and the rocket was recovered.
         </p>
-
+        <br>
         <p>
-            To navigate the maze, I developed a method based on physics simulation concepts, treating unexplored areas as attractors and walls as repulsors, while also modelling the robot’s previous path as a weaker repulsor. This encouraged exploration of new areas, and when the robot became trapped, the accumulated force from the previous path enabled it to escape.
+            - Reading brainwaves using an EEG headset over serial, and determining when a user is concentrating by isolating beta brainwaves.
         </p>
-
-        <p>
-            This approach worked reliably across a wide range of maze environments, especially after tuning the relative strength and order of the attractive and repulsive forces.
-        </p>
-
-        <p>
-            As a secondary part of the project, I aimed to estimate attitude changes using real LiDAR data.
-        </p>
-
-        <p>
-            I converted the data into a point cloud and applied the Iterative Closest Point (ICP) method to estimate the rotation matrix between initial and final 2D scans. To avoid convergence locality, I implemented grid sampling over rotation matrices to identify the angle with the highest convergence (i.e. the angle to which the most points aligned).
-        </p>
-
-        <p>
-            This method achieved accuracy within two degrees in testing, with improved performance when more environmental features were present. It successfully estimated rotations of approximately ±90 degrees using only LiDAR point cloud data, without relying on gyroscopes or accelerometers.
-        </p>
-
     </div>
 
     <div class="project-tech">
-        <strong>Technologies:</strong> Python, SLAM, LiDAR Simulation, ICP, Occupancy Grids
+        <strong>Technologies:</strong> Various
     </div>
 
     <a href="../#personal-projects" class="back-link">← Back to Projects</a>
@@ -217,10 +220,4 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 
 </body>
-
 </html>
-<script>
-function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("active");
-}
-</script>
