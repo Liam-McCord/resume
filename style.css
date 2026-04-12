@@ -513,13 +513,16 @@ a:visited {
 }
 
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-        z-index: 2000;
+    .nav-links {
+        display: none;
     }
 
-    .nav-links {
-        z-index: 1500;
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
     }
 }
 
