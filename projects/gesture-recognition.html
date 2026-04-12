@@ -105,15 +105,40 @@
         }
     </style>
 </head>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.getElementById("navLinks");
+
+    if (!menuToggle || !navLinks) return;
+
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+
+    // close menu when clicking a link (mobile)
+    navLinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            if (window.innerWidth <= 768) {
+                navLinks.classList.remove("active");
+            }
+        });
+    });
+});
+</script>
 <body>
 
 <nav class="navbar">
     <div class="logo">Liam McCord</div>
-    <ul class="nav-links">
+
+    <div class="menu-toggle">☰</div>
+
+    <ul class="nav-links" id="navLinks">
         <li><a href="../#about">About</a></li>
         <li><a href="../#internships">Internships</a></li>
+
         <li class="dropdown">
-            <a href="../#personal-projects">Projects ▾</a>
+            <a href="../#personal-projects" class="dropbtn">Projects</a>
             <div class="dropdown-content">
                 <a href="orbital-optimiser.html">Orbital Simulation Tool</a>
                 <a href="slam-framework.html">SLAM Framework</a>
@@ -124,6 +149,7 @@
                 <a href="gesture-recognition.html">Gesture Recognition</a>
             </div>
         </li>
+
         <li><a href="../#contact">Contact</a></li>
     </ul>
 </nav>
@@ -172,6 +198,13 @@
 
     <a href="../#personal-projects" class="back-link">← Back to Projects</a>
 </section>
+<footer>
+    <p>© 2026 Liam McCord</p>
+</footer>
+
+<div class="mobile-banner">
+    This portfolio is best viewed on desktop
+</div>
 
 </body>
 </html>

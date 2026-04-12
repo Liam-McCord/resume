@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+a<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,19 +8,41 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/quaternion-cut.png">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .mobile-banner {
+            display: none;
+            text-align: center;
+            padding: 10px;
+            background: #111;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-banner {
+                display: block;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<!-- Navbar with Projects Dropdown -->
+<!-- Navbar -->
 <nav class="navbar">
     <div class="logo">Liam McCord</div>
-    <ul class="nav-links">
+    <div class="menu-toggle">☰</div>
+    <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#internships">Internships</a></li>
         <li class="dropdown">
-            <a href="#personal-projects" class="dropbtn">Projects</a>
+            <a href="#personal-projects" class="dropbtn project-link">Projects</a>
             <div class="dropdown-content">
-
                 <a href="projects/orbital-optimiser.html">Orbital Simulation Tool</a>
                 <a href="projects/slam-framework.html">SLAM Framework</a>
                 <a href="projects/quaternion-control.html">Quaternion Attitude Control</a>
@@ -34,18 +56,16 @@
     </ul>
 </nav>
 
-<!-- Hero Section -->
+<!-- Hero -->
 <section class="hero">
     <div class="hero-content">
         <h1>Liam McCord</h1>
         <p>Penultimate year Mechatronics (Robotics) Engineering student with a keen passion for aerospace, robotics, and design.</p>
-        
         <a href="#internships" class="btn">Portfolio Overview</a>
-        <!-- <a href="#projects" class="btn">View My Work</a> -->
     </div>
 </section>
 
-<!-- About Section -->
+<!-- About -->
 <section id="about" class="section about-section">
     <h2>About Me</h2>
     <div class="about-grid">
@@ -74,12 +94,12 @@
     </div>
 </section>
 
-<!-- Internships Section -->
+<!-- Internships -->
 <section id="internships" class="section">
     <h2 class="section-title">Internships</h2>
     <div class="project-grid">
         <div class="project-card">
-            <img src="assets/kea-aerospace.png" alt="Kea Aerospace">
+            <img src="assets/kea-aerospace.png" alt="Kea Aerospace logo">
             <div class="project-overlay">
                 <h3>Kea Aerospace</h3>
                 <p>
@@ -90,7 +110,7 @@
         </div>
 
         <div class="project-card">
-            <img src="assets/zenno-bigshot.jpg" alt="Zenno Astronautics">
+            <img src="assets/zenno-bigshot.jpg" alt="Zenno Astronautics logo">
             <div class="project-overlay">
                 <h3>Zenno Astronautics</h3>
                 <p>
@@ -102,78 +122,90 @@
     </div>
 </section>
 
-<!-- Personal Projects Section -->
+<!-- Projects -->
 <section id="personal-projects" class="section">
     <h2 class="section-title">Personal Projects</h2>
     <div class="project-scroll-wrapper">
-        <button class="scroll-btn left" onclick="scrollProjects(-1)">&#10094;</button>
-        <div class="project-scroll" id="projectScroll">
-            <a href="projects/orbital-optimiser.html" class="project-card">
-                <img src="assets/orbital-optimiser.png" alt="Orbital Simulation">
-                <div class="project-overlay">
-                    <h3>Orbital Simulation Tool</h3>
-                    <p>N-body simulator with Monte Carlo trajectory optimisation.</p>
-                    <span class="tech">Python • C • Numerical Methods</span>
-                </div>
-            </a>
-            <a href="projects/slam-framework.html" class="project-card">
-                <img src="assets/slamcropped.png" alt="SLAM Framework">
-                <div class="project-overlay">
-                    <h3>SLAM Framework</h3>
-                    <p>2D robot mapping, navigation, and attitude estimation from LIDAR.</p>
-                    <span class="tech">Python • LIDAR • Simulation</span>
-                </div>
-            </a>
-            <a href="projects/quaternion-control.html" class="project-card">
-                <img src="assets/quaternion-control.png" alt="Quaternion Control">
-                <div class="project-overlay">
-                    <h3>Quaternion Attitude Control</h3>
-                    <p>Satellite attitude control framework using quaternion dynamics.</p>
-                    <span class="tech">Python • Control Systems</span>
-                </div>
-            </a>
-            <a href="projects/bluestone-flight-computer.html" class="project-card">
-                <img src="assets/bluestone-real.png" alt="Flight Computer">
-                <div class="project-overlay">
-                    <h3>Bluestone Flight Computer</h3>
-                    <p>Custom PCB flight computer architecture.</p>
-                    <span class="tech">Embedded C • PCB Design</span>
-                </div>
-            </a>
-            <a href="projects/pick-and-place.html" class="project-card">
-                <img src="assets/PNPMachine.png" alt="Pick and Place">
-                <div class="project-overlay">
-                    <h3>Pick & Place Machine</h3>
-                    <p>CoreXY mechanical system design and implementation.</p>
-                    <span class="tech">SolidWorks • Mechanical Design</span>
-                </div>
-            </a>
-            <a href="projects/rocket-simulation.html" class="project-card">
-                <img src="assets/trajectory-atmo-cropped.png" alt="Rocket Simulation">
-                <div class="project-overlay">
-                    <h3>Atmospheric Rocket Simulation</h3>
-                    <p>Atmospheric trajectory modelling and simulation framework.</p>
-                    <span class="tech">Python • Simulation</span>
-                </div>
-            </a>
-            <a href="projects/gesture-recognition.html" class="project-card">
-                <img src="assets/gesture-recognition-peace.png" alt="Gesture Recognition">
-                <div class="project-overlay">
-                    <h3>Gesture Recognition</h3>
-                    <p>Computer vision-based gesture classification system.</p>
-                    <span class="tech">Python • OpenCV</span>
-                </div>
-            </a>
+        <button class="scroll-btn left" aria-label="Scroll left">&#10094;</button>
+
+<div class="project-scroll" id="projectScroll">
+
+    <a href="projects/orbital-optimiser.html" class="project-card">
+        <img src="assets/orbital-optimiser.png" alt="Orbital Simulation">
+        <div class="project-overlay">
+            <h3>Orbital Simulation Tool</h3>
+            <p>N-body simulator with Monte Carlo trajectory optimisation.</p>
+            <span class="tech">Python • C • Numerical Methods</span>
         </div>
-        <button class="scroll-btn right" onclick="scrollProjects(1)">&#10095;</button>
+    </a>
+
+    <a href="projects/slam-framework.html" class="project-card">
+        <img src="assets/slamcropped.png" alt="SLAM Framework">
+        <div class="project-overlay">
+            <h3>SLAM Framework</h3>
+            <p>2D robot mapping, navigation, and attitude estimation from LIDAR.</p>
+            <span class="tech">Python • LIDAR • Simulation</span>
+        </div>
+    </a>
+
+    <a href="projects/quaternion-control.html" class="project-card">
+        <img src="assets/quaternion-control.png" alt="Quaternion Control">
+        <div class="project-overlay">
+            <h3>Quaternion Attitude Control</h3>
+            <p>Satellite attitude control framework using quaternion dynamics.</p>
+            <span class="tech">Python • Control Systems</span>
+        </div>
+    </a>
+
+    <a href="projects/bluestone-flight-computer.html" class="project-card">
+        <img src="assets/bluestone-real.png" alt="Flight Computer">
+        <div class="project-overlay">
+            <h3>Bluestone Flight Computer</h3>
+            <p>Custom PCB flight computer architecture.</p>
+            <span class="tech">Embedded C • PCB Design</span>
+        </div>
+    </a>
+
+    <a href="projects/pick-and-place.html" class="project-card">
+        <img src="assets/PNPMachine.png" alt="Pick and Place">
+        <div class="project-overlay">
+            <h3>Pick & Place Machine</h3>
+            <p>CoreXY mechanical system design and implementation.</p>
+            <span class="tech">SolidWorks • Mechanical Design</span>
+        </div>
+    </a>
+
+    <a href="projects/rocket-simulation.html" class="project-card">
+        <img src="assets/trajectory-atmo-cropped.png" alt="Rocket Simulation">
+        <div class="project-overlay">
+            <h3>Atmospheric Rocket Simulation</h3>
+            <p>Atmospheric trajectory modelling and simulation framework.</p>
+            <span class="tech">Python • Simulation</span>
+        </div>
+    </a>
+
+    <a href="projects/gesture-recognition.html" class="project-card">
+        <img src="assets/gesture-recognition-peace.png" alt="Gesture Recognition">
+        <div class="project-overlay">
+            <h3>Gesture Recognition</h3>
+            <p>Computer vision-based gesture classification system.</p>
+            <span class="tech">Python • OpenCV</span>
+        </div>
+    </a>
+
+</div>
+
+        <button class="scroll-btn right" aria-label="Scroll right">&#10095;</button>
     </div>
 </section>
 
-<!-- Contact Section -->
+<!-- Contact -->
 <section id="contact">
     <h2>Contact Me</h2>
     <p>Get in touch! I’m happy to discuss projects, opportunities, or just say hi.</p>
-    <p>Email: <a href="mailto:mccord.liam@gmail.com" class="email-link">mccord.liam@gmail.com</a></p>
+    <p><a href="mailto:mccord.liam@gmail.com" class="email-link">
+    Contact via email
+</a></p>
 
     <div class="contact-links">
         <a href="https://github.com/Liam-McCord" target="_blank">
@@ -181,11 +213,11 @@
             GitHub
         </a>
         <a href="https://www.linkedin.com/in/liam-mccord/" target="_blank">
-            <img src="assets/linkedintransparent.svg" alt="GitHub">
+            <img src="assets/linkedintransparent.svg" alt="LinkedIn">
             LinkedIn
         </a>
         <a href="assets/liam-resume-3.pdf" target="_blank">
-            <img src="assets/resumesvg.svg" alt="GitHub">
+            <img src="assets/resumesvg.svg" alt="Resume">
             Resume
         </a>
     </div>
@@ -195,41 +227,163 @@
     <p>© 2026 Liam McCord</p>
 </footer>
 
-<!-- Project Slider JS (unchanged) -->
+<div class="mobile-banner">
+    This portfolio is best viewed on desktop
+</div>
+
 <script>
-const container = document.getElementById("projectScroll");
-let cards = Array.from(container.children);
-const cardsPerView = window.innerWidth <= 800 ? 1 : 3;
-let currentIndex = cardsPerView;
-const firstClones = cards.slice(0, cardsPerView).map(card => card.cloneNode(true));
-const lastClones = cards.slice(-cardsPerView).map(card => card.cloneNode(true));
-lastClones.forEach(clone => container.insertBefore(clone, container.firstChild));
-firstClones.forEach(clone => container.appendChild(clone));
-cards = Array.from(container.children);
-const gap = 32;
-const cardWidth = cards[0].offsetWidth + gap;
-container.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-function scrollProjects(direction) {
-    currentIndex += direction;
-    container.style.transition = "transform 0.6s cubic-bezier(0.65, 0, 0.35, 1)";
-    container.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+document.addEventListener("DOMContentLoaded", () => {
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.getElementById("navLinks");
+
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
 }
-container.addEventListener("transitionend", () => {
-    if (currentIndex >= cards.length - cardsPerView) {
-        container.style.transition = "none";
-        currentIndex = cardsPerView;
-        container.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    const container = document.getElementById("projectScroll");
+    const wrapper = document.querySelector(".project-scroll-wrapper");
+    const cards = Array.from(container.children);
+
+    if (cards.length === 0) return;
+
+    let currentIndex = 0;
+    let isDragging = false;
+    let startX = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+
+    const gap = 32;
+
+    function getCardsPerView() {
+        return window.innerWidth <= 800 ? 1 : 2;
     }
-    if (currentIndex < cardsPerView) {
-        container.style.transition = "none";
-        currentIndex = cards.length - (cardsPerView * 3);
-        container.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+function getCardWidth() {
+    const first = cards[0];
+    const second = cards[1];
+
+    if (!second) return first.offsetWidth;
+
+    return second.offsetLeft - first.offsetLeft;
+}
+    let cardsPerView = getCardsPerView();
+    let cardWidth = getCardWidth();
+
+    function setPosition(translate, animated = false) {
+        container.style.transition = animated ? "transform 0.4s ease" : "none";
+        container.style.transform = `translateX(${translate}px)`;
     }
+    window.addEventListener("resize", () => {
+    cardsPerView = getCardsPerView();
+    cardWidth = getCardWidth();   // <-- important
+    currentIndex = 0;
+    prevTranslate = 0;
+    currentTranslate = 0;
+    setPosition(0, false);
 });
-let autoScroll = setInterval(() => { scrollProjects(1); }, 2000);
-const wrapper = document.querySelector(".project-scroll-wrapper");
-wrapper.addEventListener("mouseenter", () => clearInterval(autoScroll));
-wrapper.addEventListener("mouseleave", () => autoScroll = setInterval(() => scrollProjects(1), 2000));
+
+    function snapToIndex() {
+        const maxIndex = cards.length - cardsPerView;
+
+        if (currentIndex < 0) currentIndex = maxIndex;
+        if (currentIndex > maxIndex) currentIndex = 0;
+
+        currentTranslate = -currentIndex * cardWidth;
+        prevTranslate = currentTranslate;
+
+        setPosition(currentTranslate, true);
+    }
+
+    function scrollProjects(direction) {
+        currentIndex += direction;
+        snapToIndex();
+    }
+
+    // Buttons
+    document.querySelector(".scroll-btn.left")
+        .addEventListener("click", () => scrollProjects(-1));
+
+    document.querySelector(".scroll-btn.right")
+        .addEventListener("click", () => scrollProjects(1));
+
+    // --- DRAG / SWIPE ---
+    function startDrag(x) {
+        isDragging = true;
+        startX = x;
+        container.style.transition = "none";
+    }
+
+    function drag(x) {
+        if (!isDragging) return;
+        const delta = x - startX;
+        currentTranslate = prevTranslate + delta;
+        setPosition(currentTranslate, false);
+    }
+function initCarousel() {
+    cardsPerView = getCardsPerView();
+    cardWidth = getCardWidth();
+
+    currentIndex = 0;
+    prevTranslate = 0;
+    currentTranslate = 0;
+
+    snapToIndex();
+}
+function endDrag() {
+    if (!isDragging) return;
+    isDragging = false;
+
+    const movedBy = currentTranslate - prevTranslate;
+
+    const threshold = cardWidth * 0.2; // 20% of a card width
+
+    if (movedBy < -threshold) {
+        currentIndex += 1;   // swipe left → next card
+    } else if (movedBy > threshold) {
+        currentIndex -= 1;   // swipe right → previous card
+    }
+    // else: stay on same card
+
+    window.addEventListener("load", initCarousel);
+}
+
+    // Mouse events
+    wrapper.addEventListener("mousedown", e => startDrag(e.clientX));
+    window.addEventListener("mousemove", e => drag(e.clientX));
+    window.addEventListener("mouseup", endDrag);
+
+    // Touch events
+    wrapper.addEventListener("touchstart", e => startDrag(e.touches[0].clientX));
+    wrapper.addEventListener("touchmove", e => drag(e.touches[0].clientX));
+    wrapper.addEventListener("touchend", endDrag);
+
+    // Prevent image drag ghosting
+    container.querySelectorAll("img").forEach(img => {
+        img.addEventListener("dragstart", e => e.preventDefault());
+    });
+
+    // Auto-scroll
+    let autoScroll = setInterval(() => scrollProjects(1), 5000);
+
+    wrapper.addEventListener("mouseenter", () => clearInterval(autoScroll));
+    wrapper.addEventListener("mouseleave", () => {
+        autoScroll = setInterval(() => scrollProjects(1), 5000);
+    });
+
+    // Resize
+    window.addEventListener("resize", () => {
+        cardsPerView = getCardsPerView();
+        cardWidth = getCardWidth();
+        currentIndex = 0;
+        prevTranslate = 0;
+        currentTranslate = 0;
+        setPosition(0, false);
+    });
+
+    // Init
+    snapToIndex();
+
+});
 </script>
 
 </body>
