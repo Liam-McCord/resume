@@ -1,34 +1,13 @@
-a<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Liam McCord | Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/quaternion-cut.png">
-
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .mobile-banner {
-            display: none;
-            text-align: center;
-            padding: 10px;
-            background: #111;
-            color: white;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .mobile-banner {
-                display: block;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -73,16 +52,13 @@ a<!DOCTYPE html>
         <div class="about-text">
             <h3>My Drive</h3>
             <p>
-            I’m a fourth-year Mechatronics Engineering student with a strong curiosity about how the universe works and a constant drive to learn. That curiosity has led me into a wide range of engineering projects, but I’ve found myself especially drawn to aerospace. It presents some of the most challenging and rewarding problems I’ve come across.
-
+            I'm a fourth-year Mechatronics Engineering student with a strong curiosity about how the universe works and a constant drive to learn. That curiosity has led me into a wide range of engineering projects, but I've found myself especially drawn to aerospace. It presents some of the most challenging and rewarding problems I've come across.
             </p>
-            <br>
             <p>
-            Along the way, I’ve built hands-on experience through both personal and academic projects, as well as time spent at two aerospace companies. I enjoy getting stuck into complex problems and figuring out how things work, whether that’s designing, building, or testing.
+            Along the way, I've built hands-on experience through both personal and academic projects, as well as time spent at two aerospace companies. I enjoy getting stuck into complex problems and figuring out how things work, whether that's designing, building, or testing.
             </p>
-            <br>
             <p>
-            I’m persistent by nature and tend to approach challenges from multiple angles until something clicks. I’m comfortable working independently, but I also enjoy being part of a team and learning from others. Ultimately, I’m motivated by working on meaningful, cutting-edge projects and contributing to something bigger than myself.
+            I'm persistent by nature and tend to approach challenges from multiple angles until something clicks. I'm comfortable working independently, but I also enjoy being part of a team and learning from others. Ultimately, I'm motivated by working on meaningful, cutting-edge projects and contributing to something bigger than myself.
             </p>
             <h3>Outside of Engineering</h3>
             <p>
@@ -102,29 +78,37 @@ a<!DOCTYPE html>
 <section id="internships" class="section">
     <h2 class="section-title">Internships</h2>
     <div class="project-grid">
-        <div class="project-card">
+        <a href="internships/kea-aerospace.html" class="project-card">
             <img src="assets/kea-aerospace.png" alt="Kea Aerospace logo">
             <div class="project-overlay">
                 <h3>Kea Aerospace</h3>
-                <p>
-                    Developed a 6-DOF nonlinear aircraft control system validation suite with configurable test conditions and Monte Carlo testing for a solar-powered stratospheric aircraft.
-                </p>
+                <p>Developed a 6-DOF nonlinear aircraft control system validation suite with configurable test conditions and Monte Carlo testing for a solar-powered stratospheric aircraft.</p>
                 <span class="tech">GNC • Nonlinear Modelling • Control System Analysis</span>
             </div>
-        </div>
+        </a>
 
-        <div class="project-card">
+        <a href="internships/zenno-astronautics.html" class="project-card">
             <img src="assets/zenno-bigshot.jpg" alt="Zenno Astronautics logo">
             <div class="project-overlay">
                 <h3>Zenno Astronautics</h3>
-                <p>
-                    Designed radiation shielding and devised and implemented a comprehensive radiation testing plan for a superconducting satellite module that is now in-orbit.
-                </p>
+                <p>Designed radiation shielding and devised and implemented a comprehensive radiation testing plan for a superconducting satellite module that is now in-orbit.</p>
                 <span class="tech">SPENVIS • Radiation Analysis • Shielding Design</span>
             </div>
-        </div>
+        </a>
     </div>
 </section>
+<!-- Final Year Project -->
+<!-- <section id="fyp" class="section">
+    <h2 class="section-title">Final Year Project</h2>
+    <a href="projects/final-year-project.html" class="fyp-banner">
+        <img src="assets/fyp-banner.png" alt="Final Year Project">
+        <div class="fyp-overlay">
+            <h3>UC Aerospace - Project Huia</h3>
+            <p>SITL, control surface sizing, and Autopilot development for an unmanned high-speed fixed-wing development platform.</p>
+            <span class="tech">Tech • Stack • Here</span>
+        </div>
+    </a>
+</section> -->
 
 <!-- Projects -->
 <section id="personal-projects" class="section">
@@ -132,84 +116,83 @@ a<!DOCTYPE html>
     <div class="project-scroll-wrapper">
         <button class="scroll-btn left" aria-label="Scroll left">&#10094;</button>
 
-<div class="project-scroll" id="projectScroll">
+        <div class="project-scroll" id="projectScroll">
 
-    <a href="projects/orbital-optimiser.html" class="project-card">
-        <img src="assets/orbital-optimiser.png" alt="Orbital Simulation">
-        <div class="project-overlay">
-            <h3>Orbital Simulation Tool</h3>
-            <p>N-body simulator with Monte Carlo trajectory optimisation.</p>
-            <span class="tech">Python • C • Numerical Methods</span>
+            <a href="projects/orbital-optimiser.html" class="project-card">
+                <img src="assets/orbital-optimiser.png" alt="Orbital Simulation">
+                <div class="project-overlay">
+                    <h3>Orbital Simulation Tool</h3>
+                    <p>N-body simulator with Monte Carlo trajectory optimisation.</p>
+                    <span class="tech">Python • C • Numerical Methods</span>
+                </div>
+            </a>
+
+            <a href="projects/slam-framework.html" class="project-card">
+                <img src="assets/slamcropped.png" alt="SLAM Framework">
+                <div class="project-overlay">
+                    <h3>SLAM Framework</h3>
+                    <p>2D robot mapping, navigation, and attitude estimation from LIDAR.</p>
+                    <span class="tech">Python • LIDAR • Simulation</span>
+                </div>
+            </a>
+
+            <a href="projects/quaternion-control.html" class="project-card">
+                <img src="assets/quaternion-control.png" alt="Quaternion Control">
+                <div class="project-overlay">
+                    <h3>Quaternion Attitude Control</h3>
+                    <p>Satellite attitude control framework using quaternion dynamics.</p>
+                    <span class="tech">Python • Control Systems</span>
+                </div>
+            </a>
+
+            <a href="projects/bluestone-flight-computer.html" class="project-card">
+                <img src="assets/bluestone-real.png" alt="Flight Computer">
+                <div class="project-overlay">
+                    <h3>Bluestone Flight Computer</h3>
+                    <p>Custom PCB flight computer architecture.</p>
+                    <span class="tech">Embedded C • PCB Design</span>
+                </div>
+            </a>
+
+            <a href="projects/pick-and-place.html" class="project-card">
+                <img src="assets/PNPMachine.png" alt="Pick and Place">
+                <div class="project-overlay">
+                    <h3>Pick & Place Machine</h3>
+                    <p>CoreXY mechanical system design and implementation.</p>
+                    <span class="tech">SolidWorks • Mechanical Design</span>
+                </div>
+            </a>
+
+            <a href="projects/rocket-simulation.html" class="project-card">
+                <img src="assets/trajectory-atmo-cropped.png" alt="Rocket Simulation">
+                <div class="project-overlay">
+                    <h3>Atmospheric Rocket Simulation</h3>
+                    <p>Atmospheric trajectory modelling and simulation framework.</p>
+                    <span class="tech">Python • Simulation</span>
+                </div>
+            </a>
+
+            <a href="projects/gesture-recognition.html" class="project-card">
+                <img src="assets/gesture-recognition-peace.png" alt="Gesture Recognition">
+                <div class="project-overlay">
+                    <h3>Gesture Recognition</h3>
+                    <p>Computer vision-based gesture classification system.</p>
+                    <span class="tech">Python • OpenCV</span>
+                </div>
+            </a>
+
         </div>
-    </a>
-
-    <a href="projects/slam-framework.html" class="project-card">
-        <img src="assets/slamcropped.png" alt="SLAM Framework">
-        <div class="project-overlay">
-            <h3>SLAM Framework</h3>
-            <p>2D robot mapping, navigation, and attitude estimation from LIDAR.</p>
-            <span class="tech">Python • LIDAR • Simulation</span>
-        </div>
-    </a>
-
-    <a href="projects/quaternion-control.html" class="project-card">
-        <img src="assets/quaternion-control.png" alt="Quaternion Control">
-        <div class="project-overlay">
-            <h3>Quaternion Attitude Control</h3>
-            <p>Satellite attitude control framework using quaternion dynamics.</p>
-            <span class="tech">Python • Control Systems</span>
-        </div>
-    </a>
-
-    <a href="projects/bluestone-flight-computer.html" class="project-card">
-        <img src="assets/bluestone-real.png" alt="Flight Computer">
-        <div class="project-overlay">
-            <h3>Bluestone Flight Computer</h3>
-            <p>Custom PCB flight computer architecture.</p>
-            <span class="tech">Embedded C • PCB Design</span>
-        </div>
-    </a>
-
-    <a href="projects/pick-and-place.html" class="project-card">
-        <img src="assets/PNPMachine.png" alt="Pick and Place">
-        <div class="project-overlay">
-            <h3>Pick & Place Machine</h3>
-            <p>CoreXY mechanical system design and implementation.</p>
-            <span class="tech">SolidWorks • Mechanical Design</span>
-        </div>
-    </a>
-
-    <a href="projects/rocket-simulation.html" class="project-card">
-        <img src="assets/trajectory-atmo-cropped.png" alt="Rocket Simulation">
-        <div class="project-overlay">
-            <h3>Atmospheric Rocket Simulation</h3>
-            <p>Atmospheric trajectory modelling and simulation framework.</p>
-            <span class="tech">Python • Simulation</span>
-        </div>
-    </a>
-
-    <a href="projects/gesture-recognition.html" class="project-card">
-        <img src="assets/gesture-recognition-peace.png" alt="Gesture Recognition">
-        <div class="project-overlay">
-            <h3>Gesture Recognition</h3>
-            <p>Computer vision-based gesture classification system.</p>
-            <span class="tech">Python • OpenCV</span>
-        </div>
-    </a>
-
-</div>
 
         <button class="scroll-btn right" aria-label="Scroll right">&#10095;</button>
     </div>
+    <div class="scroll-dots" id="scrollDots"></div>
 </section>
 
 <!-- Contact -->
 <section id="contact">
     <h2>Contact Me</h2>
-    <p>Get in touch! I’m happy to discuss projects, opportunities, or just say hi.</p>
-    <p><a href="mailto:mccord.liam@gmail.com" class="email-link">
-    Contact via email
-</a></p>
+    <p>Get in touch! I'm happy to discuss projects, opportunities, or just say hi.</p>
+    <p><a href="mailto:mccord.liam@gmail.com" class="email-link">Contact via email</a></p>
 
     <div class="contact-links">
         <a href="https://github.com/Liam-McCord" target="_blank">
@@ -237,18 +220,24 @@ a<!DOCTYPE html>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.getElementById("navLinks");
+    // --- MOBILE NAV ---
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.getElementById("navLinks");
 
-if (menuToggle && navLinks) {
-    menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-    });
-}
-    const container = document.getElementById("projectScroll");
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    }
+
+    // --- CAROUSEL ---
     const wrapper = document.querySelector(".project-scroll-wrapper");
-    const cards = Array.from(container.children);
+    const container = document.getElementById("projectScroll");
+    const dotsContainer = document.getElementById("scrollDots");
 
+    if (!container || !wrapper) return;
+
+    const cards = Array.from(container.children);
     if (cards.length === 0) return;
 
     let currentIndex = 0;
@@ -256,46 +245,61 @@ if (menuToggle && navLinks) {
     let startX = 0;
     let currentTranslate = 0;
     let prevTranslate = 0;
-
-    const gap = 32;
+    let cardsPerView = 1;
+    let cardWidth = 0;
+    let maxIndex = 0;
+    let autoScrollTimer = null;
 
     function getCardsPerView() {
         return window.innerWidth <= 800 ? 1 : 2;
     }
-function getCardWidth() {
-    const first = cards[0];
-    const second = cards[1];
 
-    if (!second) return first.offsetWidth;
+    function getCardWidth() {
+        const first = cards[0];
+        const second = cards[1];
+        if (!second) return first.offsetWidth;
+        return second.offsetLeft - first.offsetLeft;
+    }
 
-    return second.offsetLeft - first.offsetLeft;
-}
-    let cardsPerView = getCardsPerView();
-    let cardWidth = getCardWidth();
-
-    function setPosition(translate, animated = false) {
-        container.style.transition = animated ? "transform 0.4s ease" : "none";
+    function setPosition(translate, animated = true) {
+        container.style.transition = animated
+            ? "transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)"
+            : "none";
         container.style.transform = `translateX(${translate}px)`;
     }
-    window.addEventListener("resize", () => {
-    cardsPerView = getCardsPerView();
-    cardWidth = getCardWidth();   // <-- important
-    currentIndex = 0;
-    prevTranslate = 0;
-    currentTranslate = 0;
-    setPosition(0, false);
-});
 
-    function snapToIndex() {
-        const maxIndex = cards.length - cardsPerView;
+    function buildDots() {
+        if (!dotsContainer) return;
+        dotsContainer.innerHTML = "";
+        const dotCount = maxIndex + 1;
+        for (let i = 0; i <= maxIndex; i++) {
+            const dot = document.createElement("button");
+            dot.className = "scroll-dot" + (i === currentIndex ? " active" : "");
+            dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
+            dot.addEventListener("click", () => {
+                currentIndex = i;
+                snapToIndex();
+            });
+            dotsContainer.appendChild(dot);
+        }
+    }
 
+    function updateDots() {
+        if (!dotsContainer) return;
+        Array.from(dotsContainer.children).forEach((dot, i) => {
+            dot.classList.toggle("active", i === currentIndex);
+        });
+    }
+
+    function snapToIndex(animated = true) {
         if (currentIndex < 0) currentIndex = maxIndex;
         if (currentIndex > maxIndex) currentIndex = 0;
 
         currentTranslate = -currentIndex * cardWidth;
         prevTranslate = currentTranslate;
 
-        setPosition(currentTranslate, true);
+        setPosition(currentTranslate, animated);
+        updateDots();
     }
 
     function scrollProjects(direction) {
@@ -303,18 +307,41 @@ function getCardWidth() {
         snapToIndex();
     }
 
+    function startAutoScroll() {
+        stopAutoScroll();
+        autoScrollTimer = setInterval(() => scrollProjects(1), 5000);
+    }
+
+    function stopAutoScroll() {
+        if (autoScrollTimer) {
+            clearInterval(autoScrollTimer);
+            autoScrollTimer = null;
+        }
+    }
+
+    function recalc() {
+        cardsPerView = getCardsPerView();
+        cardWidth = getCardWidth();
+        maxIndex = Math.max(0, cards.length - cardsPerView);
+        if (currentIndex > maxIndex) currentIndex = maxIndex;
+        buildDots();
+        snapToIndex(false);
+    }
+
     // Buttons
     document.querySelector(".scroll-btn.left")
-        .addEventListener("click", () => scrollProjects(-1));
+        .addEventListener("click", () => { stopAutoScroll(); scrollProjects(-1); startAutoScroll(); });
 
     document.querySelector(".scroll-btn.right")
-        .addEventListener("click", () => scrollProjects(1));
+        .addEventListener("click", () => { stopAutoScroll(); scrollProjects(1); startAutoScroll(); });
 
     // --- DRAG / SWIPE ---
     function startDrag(x) {
         isDragging = true;
         startX = x;
+        stopAutoScroll();
         container.style.transition = "none";
+        container.classList.add("dragging");
     }
 
     function drag(x) {
@@ -323,33 +350,24 @@ function getCardWidth() {
         currentTranslate = prevTranslate + delta;
         setPosition(currentTranslate, false);
     }
-function initCarousel() {
-    cardsPerView = getCardsPerView();
-    cardWidth = getCardWidth();
 
-    currentIndex = 0;
-    prevTranslate = 0;
-    currentTranslate = 0;
+    function endDrag() {
+        if (!isDragging) return;
+        isDragging = false;
+        container.classList.remove("dragging");
 
-    snapToIndex();
-}
-function endDrag() {
-    if (!isDragging) return;
-    isDragging = false;
+        const movedBy = currentTranslate - prevTranslate;
+        const threshold = cardWidth * 0.18;
 
-    const movedBy = currentTranslate - prevTranslate;
+        if (movedBy < -threshold) {
+            currentIndex += 1;
+        } else if (movedBy > threshold) {
+            currentIndex -= 1;
+        }
 
-    const threshold = cardWidth * 0.2; // 20% of a card width
-
-    if (movedBy < -threshold) {
-        currentIndex += 1;   // swipe left → next card
-    } else if (movedBy > threshold) {
-        currentIndex -= 1;   // swipe right → previous card
+        snapToIndex();
+        startAutoScroll();
     }
-    // else: stay on same card
-
-    window.addEventListener("load", initCarousel);
-}
 
     // Mouse events
     wrapper.addEventListener("mousedown", e => startDrag(e.clientX));
@@ -357,8 +375,8 @@ function endDrag() {
     window.addEventListener("mouseup", endDrag);
 
     // Touch events
-    wrapper.addEventListener("touchstart", e => startDrag(e.touches[0].clientX));
-    wrapper.addEventListener("touchmove", e => drag(e.touches[0].clientX));
+    wrapper.addEventListener("touchstart", e => startDrag(e.touches[0].clientX), { passive: true });
+    wrapper.addEventListener("touchmove", e => drag(e.touches[0].clientX), { passive: true });
     wrapper.addEventListener("touchend", endDrag);
 
     // Prevent image drag ghosting
@@ -366,27 +384,20 @@ function endDrag() {
         img.addEventListener("dragstart", e => e.preventDefault());
     });
 
-    // Auto-scroll
-    let autoScroll = setInterval(() => scrollProjects(1), 5000);
+    // Pause autoscroll on hover, resume on leave
+    wrapper.addEventListener("mouseenter", stopAutoScroll);
+    wrapper.addEventListener("mouseleave", startAutoScroll);
 
-    wrapper.addEventListener("mouseenter", () => clearInterval(autoScroll));
-    wrapper.addEventListener("mouseleave", () => {
-        autoScroll = setInterval(() => scrollProjects(1), 5000);
-    });
-
-    // Resize
+    // Resize (debounced)
+    let resizeTimer;
     window.addEventListener("resize", () => {
-        cardsPerView = getCardsPerView();
-        cardWidth = getCardWidth();
-        currentIndex = 0;
-        prevTranslate = 0;
-        currentTranslate = 0;
-        setPosition(0, false);
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(recalc, 150);
     });
 
     // Init
-    snapToIndex();
-
+    recalc();
+    startAutoScroll();
 });
 </script>
 

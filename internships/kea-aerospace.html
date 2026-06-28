@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kea Aerospace | Liam McCord</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/quaternion-cut.png">
+
+    <style>
+        body {
+            padding-top: 80px; /* account for navbar */
+        }
+        .project-page {
+            max-width: 1000px;
+            margin: auto;
+            padding: 3rem 2rem;
+        }
+        .project-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .project-header h1 {
+            font-size: 2.5rem;
+            color: #7f5af0;
+            margin-bottom: 0.5rem;
+        }
+        .project-header p {
+            font-size: 1.2rem;
+            color: #cccccc;
+        }
+        .project-images {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .project-images img {
+            width: 100%;
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+        .project-description {
+            font-size: 1.1rem;
+            color: #d0d0d0;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        .project-tech {
+            font-size: 1rem;
+            color: #7f5af0;
+            margin-bottom: 2rem;
+        }
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+        .back-link,
+        .company-link {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #7f5af0;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .company-link {
+            background: transparent;
+            border: 1px solid #7f5af0;
+        }
+        .back-link:hover,
+        .company-link:hover {
+            background: #9d79ff;
+            border-color: #9d79ff;
+        }
+
+        @media (min-width: 900px) {
+            .project-images {
+                flex-direction: row;
+            }
+            .project-images img {
+                width: 48%;
+            }
+        }
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a1a1a;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+            border-radius: 12px;
+            z-index: 1000;
+            top: 100%;
+        }
+        .dropdown-content a {
+            color: #f5f5f5;
+            padding: 0.8rem 1rem;
+            text-decoration: none;
+            display: block;
+            transition: 0.3s;
+        }
+        .dropdown-content a:hover {
+            background: #7f5af0;
+            color: #fff;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.getElementById("navLinks");
+
+    if (!menuToggle || !navLinks) return;
+
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+
+    // close menu when clicking a link (mobile)
+    navLinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            if (window.innerWidth <= 768) {
+                navLinks.classList.remove("active");
+            }
+        });
+    });
+});
+</script>
+<body>
+<nav class="navbar">
+    <div class="logo">Liam McCord</div>
+
+    <div class="menu-toggle">☰</div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="../#about">About</a></li>
+        <li><a href="../#internships">Internships</a></li>
+
+        <li class="dropdown">
+            <a href="../#personal-projects" class="dropbtn">Projects</a>
+            <div class="dropdown-content">
+                <a href="../projects/orbital-optimiser.html">Orbital Simulation Tool</a>
+                <a href="../projects/slam-framework.html">SLAM Framework</a>
+                <a href="../projects/quaternion-control.html">Quaternion Attitude Control</a>
+                <a href="../projects/bluestone-flight-computer.html">Bluestone Flight Computer</a>
+                <a href="../projects/pick-and-place.html">Pick & Place Machine</a>
+                <a href="../projects/rocket-simulation.html">Atmospheric Rocket Simulation</a>
+                <a href="../projects/gesture-recognition.html">Gesture Recognition</a>
+                <a href="../projects/other-projects.html">Other Projects</a>
+            </div>
+        </li>
+
+        <li><a href="../#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="project-page">
+    <div class="project-header">
+        <h1>Kea Aerospace</h1>
+        <p>GNC Engineering Intern for solar-powered stratospheric aircraft.</p>
+    </div>
+
+<div class="project-images">
+    <img src="../assets/kea-aerospace.png" alt="Kea Aerospace">
+    <div class="video-wrapper">
+        <iframe
+            src="https://www.youtube.com/embed/zuSqrN5pOsY"
+            title="Kea Aerospace video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+        </iframe>
+    </div>
+</div>
+
+    <div class="project-description">
+
+        <p>
+           Developed a 6-DOF nonlinear aircraft control system validation suite with configurable test conditions and Monte Carlo testing for a solar-powered stratospheric aircraft, with an image and video of the aircraft shown above.
+           This aircraft, the Atmos, is designed to operate in the stratosphere for extended periods.
+           The validation suite was designed to verify the performance of the aircraft's control system under various flight conditions and to identify potential issues before flight testing.
+        </p>
+
+        <p>
+            Due to intellectual property restrictions, I am unable to provide further details about the project.
+        </p>
+
+    </div>
+
+    <div class="project-tech">
+        <strong>Technologies:</strong> GNC, Nonlinear Modelling, Control System Analysis, Monte Carlo Simulation
+    </div>
+
+    <div class="project-links">
+        <a href="../#internships" class="back-link">← Back to Internships</a>
+        <a href="https://www.keaaerospace.com/" target="_blank" class="company-link">Visit Kea Aerospace →</a>
+    </div>
+</section>
+<footer>
+    <p>© 2026 Liam McCord</p>
+</footer>
+
+<div class="mobile-banner">
+    This portfolio is best viewed on desktop
+</div>
+
+</body>
+</html>
